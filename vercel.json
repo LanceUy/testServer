@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "pnyx-app-parth-dev/server/app.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "pnyx-app-parth-dev/server/app.py",
+            "methods":["GET","POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+            "headers":{
+                "Access-Control-Allow-Origin": "*"
+            }
+        }
+    ]
+}
